@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Helios Language Learning</title>
+    <style>
+        :root {
+            --helios-bg-primary: #0a0a0b;
+            --helios-bg-secondary: #151518;
+            --helios-bg-tertiary: #1f1f23;
+            --helios-bg-glass: rgba(255, 255, 255, 0.03);
+            --helios-accent-primary: #ff6b47;
+            --helios-accent-secondary: #ff8f47;
+            --helios-accent-tertiary: #ffb347;
+            --helios-accent-glow: rgba(255, 107, 71, 0.4);
+            --helios-text-primary: #f8fafc;
+            --helios-text-secondary: #e2e8f0;
+            --helios-text-muted: #94a3b8;
+            --helios-border: rgba(255, 255, 255, 0.08);
+            --helios-border-hover: rgba(255, 255, 255, 0.12);
+            --helios-shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.4);
+            --helios-shadow-strong: 0 10px 40px rgba(0, 0, 0, 0.6);
+            --helios-blur: blur(16px);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--helios-bg-primary);
+            color: var(--helios-text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--helios-accent-glow) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .bg-animation::after {
+            content: '';
+            position: absolute;
+            bottom: 20%;
+            right: 10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 143, 71, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 12s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-30px) scale(1.05); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--helios-bg-glass);
+            backdrop-filter: var(--helios-blur);
+            border-bottom: 1px solid var(--helios-border);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--helios-accent-primary), var(--helios-accent-tertiary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--helios-text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--helios-accent-primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--helios-accent-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .header-section h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--helios-text-primary), var(--helios-accent-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+        }
+
+        .last-updated {
+            color: var(--helios-text-muted);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .content-card {
+            background: var(--helios-bg-glass);
+            border: 1px solid var(--helios-border);
+            border-radius: 20px;
+            padding: 3rem;
+            backdrop-filter: var(--helios-blur);
+            box-shadow: var(--helios-shadow-soft);
+            margin-bottom: 2rem;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .content-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .content-section h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--helios-text-primary);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--helios-text-primary), var(--helios-accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .content-section h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--helios-text-secondary);
+            margin: 1.5rem 0 0.8rem;
+        }
+
+        .content-section p {
+            color: var(--helios-text-muted);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .content-section ul, .content-section ol {
+            color: var(--helios-text-muted);
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+        }
+
+        .highlight-box {
+            background: var(--helios-bg-secondary);
+            border: 1px solid var(--helios-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--helios-bg-secondary), var(--helios-bg-tertiary));
+            border: 1px solid var(--helios-border);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .contact-info h3 {
+            color: var(--helios-text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info a {
+            color: var(--helios-accent-primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info a:hover {
+            color: var(--helios-accent-secondary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            background: var(--helios-bg-tertiary);
+            text-align: center;
+            border-top: 1px solid var(--helios-border);
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            color: var(--helios-text-muted);
+        }
+
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--helios-text-muted);
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--helios-accent-primary);
+        }
+
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--helios-text-muted);
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--helios-accent-primary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-content {
+                padding: 0 1rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .main-content {
+                padding: 6rem 1rem 2rem;
+            }
+            
+            .content-card {
+                padding: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-links a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    
+    <nav>
+        <div class="nav-content">
+            <a href="index.html" class="logo">Helios</a>
+            <ul class="nav-links">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#platforms">Platforms</a></li>
+                <li><a href="index.html#download">Download</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="header-section">
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">Last updated: September 18, 2025</p>
+        </div>
+
+        <div class="content-card">
+            <div class="content-section">
+                <p>At Helios Language Learning, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your information when you use our Chrome extension and related services.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Information We Collect</h2>
+                
+                <h3>Data Stored Locally</h3>
+                <p>Helios primarily operates as a client-side application, storing most of your data locally on your device:</p>
+                <ul>
+                    <li><strong>Known Words:</strong> Words you've marked as "known" are stored locally in your browser</li>
+                    <li><strong>Language Preferences:</strong> Your selected target and native languages</li>
+                    <li><strong>Extension Settings:</strong> Your personalized configuration and preferences</li>
+                    <li><strong>Progress Data:</strong> Local tracking of your learning statistics and comprehension metrics</li>
+                </ul>
+
+                <h3>Translation Services</h3>
+                <p>When you request translations, we may send individual words or phrases to third-party translation services. This data is:</p>
+                <ul>
+                    <li>Transmitted securely using HTTPS encryption</li>
+                    <li>Not stored on our servers</li>
+                    <li>Subject to the privacy policies of the translation service providers</li>
+                </ul>
+
+                <h3>Analytics (Optional)</h3>
+                <div class="highlight-box">
+                    <p>We collect minimal, anonymized usage analytics only if you opt-in, including:</p>
+                    <ul>
+                        <li>Feature usage statistics (which features are used most)</li>
+                        <li>Error reports to help us improve the extension</li>
+                        <li>General usage patterns (no personal content)</li>
+                    </ul>
+                    <p><strong>You can disable analytics at any time in the extension settings.</strong></p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>How We Use Your Information</h2>
+                <p>We use the collected information to:</p>
+                <ul>
+                    <li>Provide translation and language learning features</li>
+                    <li>Maintain your learning progress and known words list</li>
+                    <li>Improve our extension based on usage patterns (if analytics are enabled)</li>
+                    <li>Provide technical support when requested</li>
+                    <li>Ensure the security and functionality of our services</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Data Sharing and Third Parties</h2>
+                <p>We respect your privacy and have strict policies about data sharing:</p>
+                
+                <h3>We DO NOT:</h3>
+                <ul>
+                    <li>Sell your personal information to third parties</li>
+                    <li>Share your learning progress or known words with anyone</li>
+                    <li>Store the content of web pages you visit</li>
+                    <li>Track your browsing history</li>
+                    <li>Share data for advertising purposes</li>
+                </ul>
+
+                <h3>We DO share limited data with:</h3>
+                <ul>
+                    <li><strong>Translation Services:</strong> Individual words/phrases for translation (not stored)</li>
+                    <li><strong>Anki:</strong> Only cards you explicitly choose to export</li>
+                    <li><strong>Analytics Services:</strong> Only anonymized usage data if you opt-in</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Data Security</h2>
+                <p>We implement several security measures to protect your information:</p>
+                <ul>
+                    <li><strong>Local Storage:</strong> Most data never leaves your device</li>
+                    <li><strong>Encryption:</strong> All network communications use HTTPS/TLS encryption</li>
+                    <li><strong>Minimal Data Collection:</strong> We only collect what's necessary for functionality</li>
+                    <li><strong>No Persistent Storage:</strong> We don't maintain databases of user content</li>
+                    <li><strong>Regular Security Audits:</strong> We regularly review our security practices</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Your Rights and Choices</h2>
+                <p>You have full control over your data:</p>
+                
+                <h3>Access and Control</h3>
+                <ul>
+                    <li><strong>View Your Data:</strong> All locally stored data is accessible through the extension interface</li>
+                    <li><strong>Export Your Data:</strong> Export your known words and progress data at any time</li>
+                    <li><strong>Delete Your Data:</strong> Clear all extension data through browser settings or extension options</li>
+                    <li><strong>Opt-out:</strong> Disable analytics or any optional data collection features</li>
+                </ul>
+
+                <h3>Browser Controls</h3>
+                <p>You can also manage your data through your browser:</p>
+                <ul>
+                    <li>Remove the extension to delete all local data</li>
+                    <li>Clear extension data through Chrome's extension management</li>
+                    <li>Control which websites the extension can access</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Children's Privacy</h2>
+                <p>Helios is suitable for language learners of all ages. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>International Users</h2>
+                <p>Helios is available globally. If you're using our extension outside your country of residence, please note that your data may be processed in different jurisdictions. We maintain the same privacy standards regardless of location.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Changes to This Policy</h2>
+                <p>We may update this Privacy Policy periodically to reflect changes in our practices or applicable laws. When we make changes:</p>
+                <ul>
+                    <li>We'll update the "Last updated" date at the top of this policy</li>
+                    <li>Significant changes will be announced through the extension</li>
+                    <li>Continued use of the extension constitutes acceptance of the updated policy</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Third-Party Services</h2>
+                <p>Helios integrates with several third-party services. Please review their privacy policies:</p>
+                <ul>
+                    <li><strong>Google Translate API:</strong> <a href="https://policies.google.com/privacy" style="color: var(--helios-accent-primary);">Google Privacy Policy</a></li>
+                    <li><strong>Anki:</strong> Data you export is subject to Anki's terms and your local storage</li>
+                    <li><strong>Chrome Web Store:</strong> <a href="https://policies.google.com/privacy" style="color: var(--helios-accent-primary);">Google Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <h3>Questions About Privacy?</h3>
+            <p>If you have any questions about this Privacy Policy or how we handle your data, please contact us:</p>
+            <p>
+                Email: <a href="mailto:privacy@helios-lang.com">privacy@helios-lang.com</a><br>
+                Support: <a href="mailto:support@helios-lang.com">support@helios-lang.com</a>
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="mailto:support@helios-lang.com">Contact</a>
+            </div>
+            <p>&copy; 2025 Helios Language Learning Tool. Empowering language learners worldwide.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add subtle parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const content = document.querySelector('.main-content');
+            if (content) {
+                content.style.transform = `translateY(${scrolled * 0.1}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
